@@ -1,0 +1,8 @@
+.banner {
+  background-image: url(/assets/eventpik-bg.svg);
+  background-size: cover;
+  height: calc(100vh - 100px);
+  background-position: bottom;
+  display: flex;
+  align-items: center;
+}
