@@ -1,0 +1,20 @@
+<div>
+<h1>Voici nos propositions</h1>
+
+  <div class="cards-activities-container">
+    <div class="cards-activities">
+      <% @activities.each do |activity| %>
+        <div class="card-activity">
+        
+          <div class="card-activity-info"></div>
+            <h3><%= activity.title %></h3>
+            <p><%= activity.category %></p>
+            <p><%= activity.price %>€</p>
+            <p><%= activity.rating %></p>
+          </div> 
+    </div>
+  </div>
+</div>
+
+
+
