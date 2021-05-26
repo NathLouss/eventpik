@@ -1,8 +1,7 @@
 <div class="container">
 
-  <%=image_tag "./images/degustation-vin.png", alt: "Image" %>
-  <%#= cl_image_tag @activity.photo.key %>
 
+  <%= cl_image_tag @activity.photo.key, width: 400, height: 300 %>
   <h1 style="border-bottom: 1px dashed black"><%= @activity.title %></h1>
     <p style="text-align: justify"><%= @activity.description %></p>
     <p>avis: <%= @activity.rating %>
