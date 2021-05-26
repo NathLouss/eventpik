@@ -7,27 +7,12 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-// Map Activities Index
 #map {
+  grid-template-columns: 1fr;
+  height: 90vh;
   position: sticky;
   top: 0;
   margin: 16px 16px 16px 0;
-
-  img {
-      border-radius: 4px;
-  }
 }
-
-//#map {
-//  width: 30%;
-// height: 90vh;
-//  position: sticky;
-//  top: 0;
-//}
-
-//.main-container {
-//  display: flex;
-//  justify-content: space-around;
-//}
 
 

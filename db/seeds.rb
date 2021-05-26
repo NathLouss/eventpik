@@ -44,5 +44,5 @@ activity1 = Activity.create!(
   rating: 4
   )
   activity3.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024180/degustation-vin_gsnaoq.png'), filename: 'nes.png', content_type: 'image/png')
-
+  
   puts "Finished !"
