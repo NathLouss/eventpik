@@ -1,0 +1,17 @@
+.card-product {
+
+  .far {
+    color: #023047;
+    position: absolute;
+    font-size: 3em;
+    left: 18px;
+    top: 24px;
+    &:hover {
+    color: white;
+    }
+  }
+
+  .fas {
+    color: #E7B43F;
+  }
+}
