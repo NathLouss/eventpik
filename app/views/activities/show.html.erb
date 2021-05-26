@@ -1,22 +1,27 @@
 
 <div class="container">
   <div class="card-product">
+     <%= link_to activities_path(@activity) do %>
+      <i class="far fa-arrow-alt-circle-left"></i>
+    <% end %>
     <%= cl_image_tag @activity.photo.key, width: 400, height: 300 %>
 
       <div class="product-bio">
-      <h2><%= @activity.title %></h2>
-
-        <p style="text-align: justify"><%= @activity.description %></p>
-        <p>avis: <%= @activity.rating %>
-        <% @activity.rating.times do %>
-                <i class="fas fa-star star-yellow"></i>
-              <% end %></p>
-        <p class="category">catégorie: <%= @activity.category %> </p>
-        <p>où: <%= @activity.address %> </p>
-        <p>tarif: <%= @activity.price %>€</p>
-        <p>Durée: <%= @activity.duration/60 %> heures</p>
-        <p>Visitez le site: <%= link_to @activity.website_url, target: :_blank  %>  </p>
-        <%= link_to "Add to wish list", "#", id: "btn-gradiant" %>
+        <div class="card-title">
+          <h2><%= @activity.title %></h2>
+        </div>
+          <p style="text-align: justify"><%= @activity.description %></p>
+          <p>avis: <% @activity.rating.times do %>
+             <i class="fas fa-star star-yellow"></i>
+          <% end %></p>
+          <p class="category">catégorie: <%= @activity.category %> </p>
+          <p>où: <%= @activity.address %> </p>
+          <p>tarif: <%= @activity.price %>€</p>
+          <p>Durée: <%= @activity.duration/60 %> heures</p>
+          <p>Visitez le site: <%= link_to @activity.website_url, target: "_blank"  %>  </p>
+        <div class="card-button">
+            <%= link_to "Add to wish list", "#", id: "btn-gradiant",  data: { confirm: "#{@activity.title} a été ajouté à votre Wish List" } %>
+        </div>
       </div>
   </div>
 </div>
