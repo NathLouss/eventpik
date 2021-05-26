@@ -1,0 +1,38 @@
+.home-form-content {
+  width: 50%;
+  background-color: $ice-gray;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.form-input{
+
+  .form-input-location {
+    display: grid;
+    grid-template-columns: 1.5fr 0.5fr;
+  }
+
+  .form-input-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-input-dates, .form-input-location {
+    grid-gap: 16px;
+    margin-bottom: 16px;
+
+    input{
+      border-radius: 25px;
+      border: 1px solid lightgray;
+      height: 32px;
+      outline: none;
+      padding: 0 16px;
+    }
+  }
+
+}
+
+.form-action #btn-gradiant {
+  display: block;
+  text-align: center;
+}
