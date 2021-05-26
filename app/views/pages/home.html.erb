@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url('/assets/eventpik-bg.svg');">
+
+  <div class="container">
+    <div class="home-description">
+      <h1> Find best events with Eventpik</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sit veritatis autem repellat accusamus provident iusto vero illum, fugiat sapiente dicta labore, placeat, porro accusantium vel enim commodi sed dolorum!</p>
+    </div>
+
+    <div class="home-form-content">
+    <form action="">
+      <div class="form-input">
+        <div class="form-input-location">
+          <input type="text" placeholder="Address">
+          <input type="number" placeholder="Radius">
+        </div>
+        <div class="form-input-dates">
+          <input type="date" placeholder="Start at">
+          <input type="date" placeholder="End at">
+        </div>
+      </div>
+      <div class="form-action">
+        <%= link_to "Creer ma wishlist",  new_user_registration_path, id: "btn-gradiant" %>
+      </div>
+    </form>
+    </div>
+  </div>
+
+</div>

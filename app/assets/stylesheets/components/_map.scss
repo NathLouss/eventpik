@@ -1,0 +1,33 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+// Map Activities Index
+#map {
+  position: sticky;
+  top: 0;
+  margin: 16px 16px 16px 0;
+
+  img {
+      border-radius: 4px;
+  }
+}
+
+//#map {
+//  width: 30%;
+// height: 90vh;
+//  position: sticky;
+//  top: 0;
+//}
+
+//.main-container {
+//  display: flex;
+//  justify-content: space-around;
+//}
+
+

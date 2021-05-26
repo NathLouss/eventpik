@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+body {
+  background-color: white;
+}
+
+.home-description {
+  width: 50%;
+  h1 {
+    font-size: 64px;
+    font-family: $ep-header-font;
+    font-weight: 700;
+  }
+
+  p {
+    opacity: .7;
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}

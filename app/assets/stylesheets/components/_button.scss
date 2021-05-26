@@ -1,3 +1,22 @@
+// pages#home BUTTON
+a:hover{
+  text-decoration: none;
+}
+
+#btn-gradiant {
+    padding: 8px 32px;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(-25deg, #96D8CA, #86B2F3);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+
+// BUTTON (fait par léa)
 .btn-flat {
   color: white;
   padding: 8px 24px;
@@ -11,10 +30,3 @@
   background: grey;
   color: white;
 }
-
-// .category {
-//  border-width: 1px;
-//  border-style: dotted;
-//  border-color: black;
-//  padding:0 10px;
-// }

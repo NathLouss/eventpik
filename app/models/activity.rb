@@ -7,4 +7,7 @@ class Activity < ApplicationRecord
   validates :rating, inclusion: {in: (0..5)}
   validates :category, inclusion: {in: %w(sport culture gastronomie) }
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 end
