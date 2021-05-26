@@ -1,28 +1,32 @@
 <div class="container">
 <h1>Nos propositions</h1>
 
-  <div class="main-container">   
-    <div class="cards">
+<div class="container-activities">
+  <div class="cards">
+    <% @activities.each do |activity| %>
       <div class="card">
-        <% @activities.each do |activity| %>
-          <div class="card-body">
-            <h5 class="card-title"><%= activity.title %></h5>
-              <div class="card-text">
-                <p><%= activity.category %></p>
-                <p><%= activity.price %>€</p>
-                <p><%= activity.rating %></p>
-                <%= link_to 'Détails', activity_path(activity), class:"btn" %>
-              </div>
-          </div>
-        <% end %> 
+        <%= cl_image_tag activity.photo.key, width: 200, height: 150 %>
+        <div class="card-body">
+          <h2 class="card-title"><%= activity.title %></h5>
+            <div class="card-text">
+              <p><%= activity.category %></p>
+              <p><%= activity.price %>€</p>
+              <p> <% activity.rating.times do %>
+                <i class="fas fa-star star-yellow"></i>
+              <% end %>
+              </p>
+              <%= link_to 'Détails', activity_path(activity), class:"btn" %>
+            </div>
+        </div>
       </div>
-    </div>
-    
-    <div id="map"
-        style="width: 50%; height: 100vh;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-    </div>
+    <% end %> 
   </div>
+  <div id="map"
+      style="width: 50%; height: 100vh;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
+</div>
+
 </div> 
 
