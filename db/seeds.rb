@@ -43,6 +43,13 @@ activity1 = Activity.create!(
   price: 20,
   rating: 4
   )
+
+
+  User.destroy_all
+  User.create!(nick_name: "alex", email: "alexandre.badin33@laposte.net", password: "azerty")
+  puts "Finished !"
+
   activity3.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024180/degustation-vin_gsnaoq.png'), filename: 'nes.png', content_type: 'image/png')
   
   puts "Finished !"
+
