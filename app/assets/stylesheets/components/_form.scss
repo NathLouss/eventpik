@@ -1,3 +1,4 @@
+//FORM HOME PAGE
 .home-form-content {
   width: 50%;
   background-color: $ice-gray;
@@ -29,10 +30,42 @@
       padding: 0 16px;
     }
   }
-
 }
 
 .form-action #btn-gradiant {
   display: block;
   text-align: center;
+}
+
+//FORM SESSION REGISTRATION
+.form-login, .form-signup {
+  background: white;
+  padding: 10px 20px;
+  margin: 50px 0;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px 32px;
+    border-radius: 25px;
+    color: white;
+    background: linear-gradient(-25deg, #96D8CA, #86B2F3);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+}
+
+.form-container {
+  background: linear-gradient(-25deg, #96D8CA, #86B2F3);
+  margin: 50px;
 }
