@@ -15,10 +15,6 @@ activity1 = Activity.create!(
   price: 100,
   rating: 5
   )
- # activity1.photo.attach(io: File.open(File.join(Rails.root,'app/assets/images/degustation-vin.jpg')), filename: "image1.jpg", content_type: "image/jpg")
-
-
-# https://unsplash.com/photos/rYEUdOG2ves
 
   activity1.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024193/marathon-bordeaux_uasywg.png'), filename: 'nes.png', content_type: 'image/png')
 
