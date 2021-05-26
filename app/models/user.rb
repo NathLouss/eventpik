@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_one :wish_list
 
   validates :nick_name, presence: true
+  after_create :wish_list_creation
+
+  def wish_list_creation
+    WishList.create!(user: self)
+  end
 end

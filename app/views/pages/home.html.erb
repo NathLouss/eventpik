@@ -1,11 +1,10 @@
 <div class="banner" style="background-image: url('/assets/eventpik-bg.svg');">
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="home-description">
       <h1> Find best events with Eventpik</h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sit veritatis autem repellat accusamus provident iusto vero illum, fugiat sapiente dicta labore, placeat, porro accusantium vel enim commodi sed dolorum!</p>
     </div>
-
     <div class="home-form-content">
     <form action="">
       <div class="form-input">
@@ -22,6 +21,33 @@
         <%= link_to "Creer ma wishlist",  new_user_registration_path, id: "btn-gradiant" %>
       </div>
     </form>
+    </div>
+  </div> -->
+
+  <!-- SIMPLE_FORM_FOR -->
+  <div class="container">
+    <div class="home-description">
+      <h1> Find best events with Eventpik</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi sit veritatis autem repellat accusamus provident iusto vero illum, fugiat sapiente dicta labore, placeat, porro accusantium vel enim commodi sed dolorum!</p>
+    </div>
+    <div class="home-form-content">
+        <%= simple_form_for(@wishlist, method: :patch, url: wish_list_path(@wishlist)) do |f| %> 
+          <div class="form-input">
+            <div class="form-input-location">
+              <%= f.input :address, placeholder: 'Address', label: false %>
+              <%= f.input :radius, placeholder: 'Radius', label: false %>
+            </div>
+            <div class="form-input-dates">
+              <%= f.input :start_at, label: false %>
+              <%= f.input :end_at, label: false %>
+            </div>
+          </div>
+
+          <div class="form-action">
+            <%= f.submit "Créer ma wishlist", id: "btn-gradiant" %>
+          </div>
+        <% end %>
+
     </div>
   </div>
 

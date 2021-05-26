@@ -38,4 +38,6 @@ activity1 = Activity.create!(
   rating: 4
   )
 
+  User.destroy_all
+  User.create!(nick_name: "alex", email: "alexandre.badin33@laposte.net", password: "azerty")
   puts "Finished !"
