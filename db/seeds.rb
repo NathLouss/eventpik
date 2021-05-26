@@ -1,8 +1,12 @@
 require 'open-uri'
 
-puts "destruction en cours"
+puts "destruction activity en cours"
 Activity.destroy_all
-puts "done"
+puts "destruction user en cours"
+User.destroy_all
+puts "creation user"
+User.create!(nick_name: "alex", email: "alexandre.badin33@laposte.net", password: "azerty")
+puts "Finished !"
 
 puts "creating activities"
 activity1 = Activity.create!(
@@ -15,7 +19,6 @@ activity1 = Activity.create!(
   price: 100,
   rating: 5
   )
-
   activity1.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024193/marathon-bordeaux_uasywg.png'), filename: 'nes.png', content_type: 'image/png')
 
   activity2 = Activity.new(
@@ -34,7 +37,7 @@ activity1 = Activity.create!(
   activity3 = Activity.create!(
   title: "Château Pape Clément",
   category: "gastronomie",
-  address: "216 avenue Dr Nancel Pénard, 33600 Pessac",
+  address: "216 Avenue Dr Nancel Penard, 33600 Pessac",
   description: "Après une échappée dans le parc, entrez dans le cuvier bois dédié à la vinification du vin rouge, assorti de ses piges en inox et faites-vous conter ses secrets de fabrication.
   Pénétrez enfin dans le chai à barriques où repose notre vin pendant 18 mois et découvrez les subtilités d’un élevage réussi.
   Terminez votre visite par la dégustation de 3 vins de terroirs différents dont le Château Pape Clément rouge.",
@@ -43,12 +46,6 @@ activity1 = Activity.create!(
   price: 20,
   rating: 4
   )
-
-
-  User.destroy_all
-  User.create!(nick_name: "alex", email: "alexandre.badin33@laposte.net", password: "azerty")
-  puts "Finished !"
-
   activity3.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024180/degustation-vin_gsnaoq.png'), filename: 'nes.png', content_type: 'image/png')
   
   puts "Finished !"
