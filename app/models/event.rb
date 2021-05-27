@@ -3,4 +3,5 @@ class Event < ApplicationRecord
   belongs_to :activity
 
   validates :start_at, presence: true
+
 end
