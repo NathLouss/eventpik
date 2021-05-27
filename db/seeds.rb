@@ -2,14 +2,20 @@ require 'open-uri'
 
 puts "destruction activity en cours"
 Activity.destroy_all
+
 puts "destruction user en cours"
 User.destroy_all
+
 puts "creation user"
-User.create!(nick_name: "alex", email: "alexandre.badin33@laposte.net", password: "azerty")
+user = User.create!(nick_name: "alex", email: "alexandre.badin33@laposte.net", password: "azerty")
+
+puts "destruction event en cours"
+Event.destroy_all
+
 puts "Finished !"
 
 puts "creating activities"
-activity1 = Activity.create!(
+activity1 = Activity.new(
   title: "Marathon de Bordeaux",
   category: "sport",
   address: "8 rue Notre Dame, 33000 Bordeaux",
@@ -20,6 +26,7 @@ activity1 = Activity.create!(
   rating: 5
   )
   activity1.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024193/marathon-bordeaux_uasywg.png'), filename: 'nes.png', content_type: 'image/png')
+  activity1.save!
 
   activity2 = Activity.new(
   title: "Musée d'Aquitaine",
@@ -34,7 +41,7 @@ activity1 = Activity.create!(
   activity2.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024199/musee-aquitaine-bordeaux_iqnyvf.png'), filename: 'nes.png', content_type: 'image/png')
   activity2.save!
 
-  activity3 = Activity.create!(
+  activity3 = Activity.new(
   title: "Château Pape Clément",
   category: "gastronomie",
   address: "216 Avenue Dr Nancel Penard, 33600 Pessac",
@@ -47,6 +54,38 @@ activity1 = Activity.create!(
   rating: 4
   )
   activity3.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024180/degustation-vin_gsnaoq.png'), filename: 'nes.png', content_type: 'image/png')
-  
+  activity3.save!
+
   puts "Finished !"
 
+  puts "create events"
+
+  event1 = Event.new(
+    start_at: Time.now,
+    wish_list: user.wish_list,
+    activity: Activity.all.sample
+  )
+  event1.save!
+
+  event2 = Event.new(
+    start_at: Time.now,
+    wish_list: user.wish_list,
+    activity: Activity.all.sample
+  )
+  event2.save!
+
+  event3 = Event.new(
+    start_at: Time.now,
+    wish_list: user.wish_list,
+    activity: Activity.all.sample
+  )
+  event3.save!
+
+  event4 = Event.new(
+    start_at: Time.now,
+    wish_list: user.wish_list,
+    activity: Activity.all.sample
+  )
+  event4.save!
+
+  puts "finished !"
