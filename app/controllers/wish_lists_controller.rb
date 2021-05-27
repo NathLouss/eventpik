@@ -1,4 +1,8 @@
 class WishListsController < ApplicationController
+
+  def show
+  end
+  
   def update
     @wishlist = WishList.find(params[:id])
     if @wishlist.update(wishlist_params)
