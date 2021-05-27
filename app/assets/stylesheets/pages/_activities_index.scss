@@ -1,10 +1,12 @@
+.container {
+  h1 {
+    margin: 10px 0px 0px 10px;
+  }
+}
+
 .container-activities {
   display: flex;
   justify-content: space-around;
-
-  h1 {
-    margin-top: 10px;
-  }
 }
 
 .cards {
@@ -13,4 +15,5 @@
   grid-gap: 16px;
   padding: 10px;
   flex-grow: 1;
+  margin-top: 7px;
 }
