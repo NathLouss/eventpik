@@ -1,6 +1,7 @@
 class WishListsController < ApplicationController
 
   def show
+    @wishlist = WishList.find(params[:id])
   end
   
   def update
