@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  
+
   def index
     if params[:activity].present?
       @activities = Activity.near(params[:address],10)
@@ -17,6 +17,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @event = Event.new
   end
 
   private
