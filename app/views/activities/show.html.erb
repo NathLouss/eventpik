@@ -20,7 +20,10 @@
           <p>Durée: <%= @activity.duration/60 %> heures</p>
           <p>Visitez le site: <%= link_to @activity.website_url, target: "_blank"  %>  </p>
         <div class="card-button">
-            <%= link_to "Add to wish list", "#", id: "btn-gradiant",  data: { confirm: "#{@activity.title} a été ajouté à votre Wish List" } %>
+            <%#= link_to "Add to wish list", "#", id: "btn-gradiant",  data: { confirm: "#{@activity.title} a été ajouté à votre Wish List" } %>
+          <%= simple_form_for [@activity, @event], method: :post do |f| %>
+          <%= f.submit 'Ajouter à ma Wish List', id: "btn-gradiant" %>
+          <% end %>
         </div>
       </div>
   </div>
