@@ -12,18 +12,19 @@
 }
 .tilesWrap li {
 	display: inline-block;
-	width: 20%;
-	min-width: 200px;
-	max-width: 230px;
+	width: 200px;
+	height: 250px;
+	// min-width: 200px;
+	// max-width: 230px;
 	padding: 80px 20px 40px;
 	position: relative;
-	vertical-align: top;
+	// vertical-align: top;
 	margin: 10px;
-	font-family: 'helvetica', san-serif;
-	min-height: 25vh;
+	// font-family: 'helvetica', san-serif;
+	// min-height: 25vh;
 	background: $ice-gray;
-	border: 1px solid #252727;
-  border-radius: 10px;
+	// border: 1px solid #252727;
+  border-radius: 4px;
 	text-align: left;
 }
 .tilesWrap li h2 {
@@ -47,12 +48,12 @@
 	color: $dark-blue;
 	margin-top: 5px;
 }
-.tilesWrap li button {
+.tilesWrap li .wishlist-card-btn {
 	background: transparent;
 	border: 1px solid #b7b7b7;
 	padding: 10px 20px;
 	color: #b7b7b7;
-	border-radius: 3px;
+	border-radius: 4px;
 	position: relative;
 	transition: all 0.3s ease-in-out;
 	transform: translateY(-40px);
@@ -60,28 +61,27 @@
 	cursor: pointer;
 	overflow: hidden;
 }
-.tilesWrap li button:before {
+.tilesWrap li .wishlist-card-btn:before {
 	content: '';
 	position: absolute;
 	height: 100%;
-	width: 120%;
+	width: 100%;
 	background: #b7b7b7;
 	top: 0;
 	opacity: 0;
 	left: -140px;
-	border-radius: 0 20px 20px 0;
+	border-radius: 4px;
 	z-index: -1;
 	transition: all 0.3s ease-in-out;
-	
 }
-.tilesWrap li:hover button {
+.tilesWrap li:hover .wishlist-card-btn {
 	transform: translateY(5px);
 	opacity: 1;
 }
-.tilesWrap li button:hover {
+.tilesWrap li .wishlist-card-btn:hover {
 	color: #262a2b;
 }
-.tilesWrap li button:hover:before {
+.tilesWrap li .wishlist-card-btn:hover:before {
 	left: 0;
 	opacity: 1;
 }

@@ -1,37 +1,21 @@
 <div class="container">
   <div class="wish-list-container">
-    <div class="wish-list-info">
-      <h1>Welcome to your activities wishlist!</h1>
-      <p>Find me in app/views/wish_lists/show.html.erb</p>
-    </div>
-
-    <div class="event-cards">
+    <h1>Bienvenue dans votre wishlist</h1>
+    <p>Vous avez recemment ajouté les activité suivantes :</p>
+    <div class="event-cards"> 
       <ul class="tilesWrap">
-        <li>
-          <h2>01</h2>
-          <h3>Aqua-poney</h3>
-          <p>Monday, 14th January, 10am to 11am</p>
-          <button>Supprimer</button>
-        </li>
-
-        <li>
-          <h2>01</h2>
-          <h3>Aqua-poney</h3>
-          <p>Monday, 14th January, 10am to 11am</p>
-          <button>Supprimer</button>
-        </li>
-
-        <li>
-          <h2>01</h2>
-          <h3>Aqua-poney</h3>
-          <p>Monday, 14th January, 10am to 11am</p>
-          <button>Supprimer</button>
-        </li>
+        <% num = 0 %>
+        <% @events.each do |event| %>
+          <li>
+            <h2><%= num += 1 %></h2>
+            <h3><%= event.activity.title %></h3>
+            <p><%= event.activity.duration %> minutes</p>
+            <%= link_to 'Supprimer', wish_list_path(current_user.wish_list), class: 'wishlist-card-btn', method: :delete, data: { confirm: "You will destroy #{event.activity.title.upcase}, Are you sure?" } %>
+          </li>
+        <% end %>
       </ul>
     </div>
-
-    <a href="" id="btn-gradiant">Ajouter à mon agenda</a>
+    <!-- lien vers le calendrier à rajouter à la place du '#'-->
+    <%= link_to 'Créer mon agenda', '#', id: "btn-gradiant"  %>
   </div>
-<!-- EACH EVENT -->
-
 </div>
