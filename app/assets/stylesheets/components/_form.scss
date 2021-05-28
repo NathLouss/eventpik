@@ -1,6 +1,6 @@
 //FORM HOME PAGE
 .home-form-content {
-  width: 50%;
+  width: 60%;
   background-color: $ice-gray;
   border-radius: 10px;
   padding: 24px;
@@ -28,14 +28,17 @@
       height: 32px;
       outline: none;
       padding: 0 16px;
+      background-image: none;
     }
 
     #wish_list_start_at_1i, #wish_list_start_at_2i, #wish_list_start_at_3i {
       border-radius: 25px;
+      background-image: none;
     }
 
     #wish_list_end_at_1i, #wish_list_end_at_2i, #wish_list_end_at_3i {
       border-radius: 25px;
+      background-image: none;
     }
   }
 }
