@@ -9,4 +9,10 @@ class EventsController < ApplicationController
       render 'activities/show'
     end
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to wish_list_path(current_user.wish_list)
+  end
 end

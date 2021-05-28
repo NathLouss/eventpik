@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :activities, only: [ :index, :show ] do
     resources :events, only: [ :create ]
   end
-  resources :events, only: [ :update ]
+  resources :events, only: [ :update, :destroy ]
   resources :calendar, only: [ :show, :create ]
   resources :wish_lists, only: [:create, :show, :update]
 end
