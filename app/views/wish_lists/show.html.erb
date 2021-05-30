@@ -1,7 +1,7 @@
 <div class="container">
   <div class="wish-list-container">
     <h1>Bienvenue dans votre wishlist</h1>
-    <p>Vous avez recemment ajouté les activité suivantes :</p>
+    <p>Vous avez récemment ajouté les activités suivantes :</p>
     <div class="event-cards"> 
       <ul class="tilesWrap">
         <% num = 0 %>
@@ -10,12 +10,12 @@
             <h2><%= num += 1 %></h2>
             <h3><%= event.activity.title %></h3>
             <p><%= event.activity.duration %> minutes</p>
-            <%= link_to 'Supprimer', wish_list_path(current_user.wish_list), class: 'wishlist-card-btn', method: :delete, data: { confirm: "You will destroy #{event.activity.title.upcase}, Are you sure?" } %>
+            <%= link_to 'Supprimer', event_path(event), class: 'wishlist-card-btn', method: :delete, data: { confirm: "Vous allez supprimer #{event.activity.title.upcase}, êtes-vous sûr(e) ?" } %>
           </li>
         <% end %>
       </ul>
     </div>
     <!-- lien vers le calendrier à rajouter à la place du '#'-->
-    <%= link_to 'Créer mon agenda', '#', id: "btn-gradiant"  %>
+    <%= link_to 'Créer mon agenda', calendar_path, id: "btn-gradiant"  %>
   </div>
 </div>
