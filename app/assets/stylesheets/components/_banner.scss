@@ -6,3 +6,22 @@
   display: flex;
   align-items: center;
 }
+
+// activities#index BANNER
+
+.activities-index-banner {
+  background: linear-gradient(-25deg, #96D8CA, #86B2F3);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .home-form-content {
+    background: none;
+  }
+
+  #btn-gradiant {
+    border: 2px solid rgba(255, 255,255, .7);
+    background: none;
+  }
+}

@@ -7,23 +7,22 @@
       <p>Grâce à <strong>Eventpik</strong> trouvez les meilleures activités près de chez vous en quelques cliques et ajoutez les à votre calendrier personnel. Pour cela rien de plus simple, remplissez les champs ci-dessous lancez la recherche et laissez vous guider !</p>
     </div>
     <div class="home-form-content">
-        <%= simple_form_for(@wishlist, method: :patch, url: wish_list_path(@wishlist)) do |f| %> 
-          <div class="form-input">
-            <div class="form-input-location">
-              <%= f.input :address, placeholder: 'Entrez une adresse ici', label: false, id: 'address' %>
-              <%= f.input :radius, placeholder: 'Rayon', label: false %>
-            </div>
-            <div class="form-input-dates">
-              <%= f.input :start_at, as: :date, html5: true, label: false %>
-              <%= f.input :end_at, as: :date, html5: true, label: false %>
-            </div>
+      <%= simple_form_for(@wishlist, method: :patch, url: wish_list_path(@wishlist)) do |f| %> 
+        <div class="form-input">
+          <div class="form-input-location">
+            <%= f.input :address, placeholder: 'Entrez une adresse ici', label: false, id: 'address' %>
+            <%= f.input :radius, placeholder: 'Rayon', label: false %>
           </div>
-
-          <div class="form-action">
-            <%= f.submit "Lancer la recherche", id: "btn-gradiant" %>
+          <div class="form-input-dates">
+            <%= f.input :start_at, as: :date, html5: true, label: false %>
+            <%= f.input :end_at, as: :date, html5: true, label: false %>
           </div>
-        <% end %>
+        </div>
 
+        <div class="form-action">
+          <%= f.submit "Lancer la recherche", id: "btn-gradiant" %>
+        </div>
+      <% end %>
     </div>
   </div>
 

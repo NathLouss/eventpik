@@ -1,30 +1,60 @@
-<div class="container">
-  <h1>Nos propositions</h1>
+<div class="activities-index-banner">
 
-  <div class="container-activities">
-    <div class="cards">
+  <div class="home-form-content">
+    <%= simple_form_for('#') do |f| %> 
+      <div class="form-input">
+        <div class="form-input-location">
+          <%= f.input :address, placeholder: 'Entrez une adresse ici', label: false, id: 'address' %>
+          <%= f.input :radius, placeholder: 'Rayon', label: false %>
+        </div>
+        <div class="form-input-dates">
+          <%= f.input :start_at, as: :date, html5: true, label: false %>
+          <%= f.input :end_at, as: :date, html5: true, label: false %>
+        </div>
+      </div>
+
+      <div class="form-action">
+        <%= f.submit "Lancer une nouvelle recherche", id: "btn-gradiant" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="activities-container">
+    <div class="activities-cards">
       <% @activities.each do |activity| %>
         <div class="card-activity">
-          <%= cl_image_tag activity.photo.key %>
+
+          <div class="card-img">
+            <%= cl_image_tag activity.photo.try(:key) %>
+            <p><%= activity.category %></p>
+          </div>
+
           <div class="card-activity-infos">
-            <div>
-              <h2><%= link_to activity.title, activity_path(activity) %></h2>
-              <p><%= activity.category %></p>  
-              <p id="icons"> <% activity.rating.times do %>
-                <i class="fas fa-star card-activity-rating"></i>
+            <h2><%= activity.title %></h2>
+            <p><%= activity.address %></p>
+
+            <div class="card-activity-infos-bottom">
+              <p class="card-activity-infos-bottom-rating"> 
+                <% activity.rating.times do %>
+                  <i class="fas fa-star"></i>
                 <% end %>
               </p>
+              <p><%= activity.price %>€</p>
             </div>
-              <p class="card-activity-pricing"><%= activity.price %>€</p>
+            <%= link_to 'plus', activity_path(activity), id: 'btn-gradiant' %>
           </div>
         </div>
-      <% end %> 
+      <% end %>
     </div>
-    <div id="map"
-        style="width: 50%; height: 100vh;"
+
+     <div id="map"
+        style="width: 100%; height: 100vh;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
     </div>
-  </div>
-</div> 
 
+  </div>
+</div>
