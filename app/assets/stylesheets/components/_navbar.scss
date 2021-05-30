@@ -33,3 +33,21 @@
     }
   }
 }
+
+
+//WISHLIST MENU
+
+.wishlist-content {
+  background: lightpink;
+  width: 40%;
+  height: 100vh;
+  z-index: 10;
+  position: fixed;
+  top: 80;
+  right: -40%;
+  transition: all 0.75s cubic-bezier(.77,.06,.28,.85);
+}
+
+.wishlist-content-open {
+  right: 0;
+}
