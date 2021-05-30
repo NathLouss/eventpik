@@ -17,8 +17,10 @@
     margin: 0;
 
     .top-navbar-item {
+      display: flex;
       list-style: none;
       margin-left: 24px;
+      align-items: center;
 
       a {
         color: $dark-blue;

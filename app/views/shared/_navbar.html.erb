@@ -9,7 +9,10 @@
               <% if current_user.wish_list.events.empty? %>
                 <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list) %>
               <% else %>
-                <%= link_to "Ma wishlist (#{current_user.wish_list.events.count})", wish_list_path(current_user.wish_list) %>
+                <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list) %>
+                <div class="events-count">
+                  <%= "#{current_user.wish_list.events.count}" %>
+                </div>
               <% end %>
             </li>
             <li class="top-navbar-item">
