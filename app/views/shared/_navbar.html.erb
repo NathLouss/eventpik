@@ -6,7 +6,11 @@
         <ul>
           <% if user_signed_in? %>
             <li class="top-navbar-item">
-              <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list) %>
+              <% if current_user.wish_list.events.empty? %>
+                <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list) %>
+              <% else %>
+                <%= link_to "Ma wishlist (#{current_user.wish_list.events.count})", wish_list_path(current_user.wish_list) %>
+              <% end %>
             </li>
             <li class="top-navbar-item">
               <%= link_to "Mon calendrier", "#" %>
