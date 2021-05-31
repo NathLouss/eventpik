@@ -1,4 +1,9 @@
+
 <% @events.sort_by(&:created_at).each do |event| %>
-  <%= event.activity.title %>
-  <%= event.activity.duration %>
+  <ul id="results">
+    <li><%= event.activity.title %>
+        <%= event.activity.duration %></li>
+  </ul>
 <% end %>
+
+

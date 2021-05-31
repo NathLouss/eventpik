@@ -61,28 +61,28 @@ activity1 = Activity.new(
   puts "create events"
 
   event1 = Event.new(
-    start_at: Time.now,
+    start_time: Time.now,
     wish_list: user.wish_list,
     activity: Activity.all.sample
   )
   event1.save!
 
   event2 = Event.new(
-    start_at: Time.now,
+    start_time: Time.now,
     wish_list: user.wish_list,
     activity: Activity.all.sample
   )
   event2.save!
 
   event3 = Event.new(
-    start_at: Time.now,
+    start_time: Time.now,
     wish_list: user.wish_list,
     activity: Activity.all.sample
   )
   event3.save!
 
   event4 = Event.new(
-    start_at: Time.now,
+    start_time: Time.now,
     wish_list: user.wish_list,
     activity: Activity.all.sample
   )
