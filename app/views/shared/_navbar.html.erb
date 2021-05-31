@@ -7,7 +7,7 @@
           <% if user_signed_in? %>
             <li class="top-navbar-item">
               <% if current_user.wish_list.events.empty? %>
-                <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list), id: 'wishlist-menu'%>
+                <%#= link_to "Ma wishlist", wish_list_path(current_user.wish_list), id: 'wishlist-menu'%>
                 <p id='wishlist-menu'>Ma wishlist</p>
               <% else %>
                 <p id='wishlist-menu'>Ma wishlist</p>
@@ -35,5 +35,4 @@
       </div>   
     </div>
   </div>
-
 </div>
