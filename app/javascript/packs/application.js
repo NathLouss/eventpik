@@ -28,9 +28,11 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initWishList } from '../plugins/init_wishlist';
+import { initSortable } from '../plugins/init_sortable';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   initWishList();
+  initSortable();
 })
