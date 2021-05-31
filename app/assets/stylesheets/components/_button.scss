@@ -17,8 +17,11 @@ a:hover{
 }
 
 // CLOSE WISHLIST BTN
-
 .close-wishlist-btn .far {
   color: $ice-gray;
   font-size: 32px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
