@@ -22,12 +22,14 @@
       margin-left: 24px;
       align-items: center;
 
-      a {
+      a, p {
         color: $dark-blue;
         font-size: 16px;
+        margin: 0%;
 
         &:hover {
           border-bottom:2px solid $mint-green;
+          cursor: pointer;
         }
       }
     }
@@ -38,7 +40,7 @@
 //WISHLIST MENU
 
 .wishlist-content {
-  background: lightpink;
+  background: linear-gradient(-25deg, #96D8CA, #86B2F3);
   width: 40%;
   height: 100vh;
   z-index: 10;
@@ -46,6 +48,38 @@
   top: 80;
   right: -40%;
   transition: all 0.75s cubic-bezier(.77,.06,.28,.85);
+
+  .wishlist-menu-top {
+    display: flex;
+    align-items: center;
+    margin: 24px 24px;
+    justify-content: space-between;
+
+    h1 {
+      color: $ice-gray;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+
+    .wishlist-menu-events-count {
+      color: $dark-blue;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-left: 16px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: $ice-gray;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .wishlist-menu-top-right {
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 .wishlist-content-open {
