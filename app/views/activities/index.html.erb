@@ -1,7 +1,7 @@
 <div class="activities-index-banner">
 
   <div class="home-form-content">
-    <%= simple_form_for('#') do |f| %> 
+    <%= simple_form_for(@wishlist, method: :patch, url: wish_list_path(@wishlist)) do |f| %> 
       <div class="form-input">
         <div class="form-input-location">
           <%= f.input :address, placeholder: 'Entrez une adresse ici', label: false, id: 'address' %>
