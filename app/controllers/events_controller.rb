@@ -11,10 +11,8 @@ class EventsController < ApplicationController
     end
   end
 
-def update
-  raise
-      render json: { success: true }
-
+  def update
+    render json: { success: true }
   end
 
 
