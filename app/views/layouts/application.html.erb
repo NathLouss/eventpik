@@ -14,7 +14,7 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/wishlist' %>
+    <%= render 'shared/wishlist' if current_user %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
