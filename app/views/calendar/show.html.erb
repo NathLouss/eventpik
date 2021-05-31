@@ -1,9 +1,17 @@
 
+<ul id="results">
 <% @events.sort_by(&:created_at).each do |event| %>
-  <ul id="results">
-    <li><%= event.activity.title %>
+    <li data-event-id="<%= event.id %>" ><%= event.activity.title %>
         <%= event.activity.duration %></li>
-  </ul>
+  <% end %>
+</ul>
+
+<%= week_calendar events: @events do |date, events| %>
+  <%= date %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= event.activity.title %>
+    </div>
+  <% end %>
 <% end %>
-
-
