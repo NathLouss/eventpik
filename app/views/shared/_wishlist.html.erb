@@ -1,0 +1,36 @@
+<div class="wishlist-content">
+  <div class="wishlist-menu-top">
+    <div class="wishlist-menu-top-right">
+      <h1>Ma wishlist</h1>
+      <div class="wishlist-menu-events-count">
+        <%= "#{current_user.wish_list.events.count}" %>
+      </div>
+    </div>
+
+    <div class="close-wishlist-btn">
+      <i class="far fa-times-circle"></i>
+    </div>
+  </div>
+
+  <div class="events-list-notifications">
+    <% if current_user.wish_list.events.empty? %>
+      <p class="empty-message"><%= "Votre wishlist comporte actuellement vide" %></p>
+
+    <% else %>
+      <p class="empty-message"><%= "Votre wishlist comporte actuellement (#{current_user.wish_list.events.count}) évènement(s)" %></p>
+      <% current_user.wish_list.events.each do |event| %>
+        <div class="event-notification">
+          <div class="event-notification-info">
+            <h2><%= event.activity.title %></h2>
+            <h3><%= current_user.wish_list.address %></h3>
+            <p>Du <%= current_user.wish_list.start_at %> au <%= current_user.wish_list.end_at %></p>
+          </div>
+          <%= link_to event_path(event), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer #{event.activity.title.upcase} de votre wishlist ?" } do %>
+            <i class="far fa-trash-alt"></i></a>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+    <%= link_to "générer mon calendrier", '#', id: "btn-gradiant" %>
+  </div>
+</div>

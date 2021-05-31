@@ -7,9 +7,10 @@
           <% if user_signed_in? %>
             <li class="top-navbar-item">
               <% if current_user.wish_list.events.empty? %>
-                <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list) %>
+                <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list), id: 'wishlist-menu'%>
+                <p id='wishlist-menu'>Ma wishlist</p>
               <% else %>
-                <%= link_to "Ma wishlist", wish_list_path(current_user.wish_list) %>
+                <p id='wishlist-menu'>Ma wishlist</p>
                 <div class="events-count">
                   <%= "#{current_user.wish_list.events.count}" %>
                 </div>
