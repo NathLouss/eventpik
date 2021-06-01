@@ -14,7 +14,7 @@
 
   <div class="events-list-notifications">
     <% if current_user.wish_list.events.empty? %>
-      <p class="empty-message"><%= "Votre wishlist comporte actuellement vide" %></p>
+      <p class="empty-message"><%= "Votre wishlist est actuellement vide" %></p>
 
     <% else %>
       <p class="empty-message"><%= "Votre wishlist comporte actuellement (#{current_user.wish_list.events.count}) évènement(s)" %></p>
