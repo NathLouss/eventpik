@@ -1,15 +1,17 @@
+// EVENT CALENDAR GENERAL DESIGN
 #results li {
   cursor: grab;
-  
-  background: linen;
-  width: 50%;
+  background: $ice-gray;
   list-style: none;
-  padding: 24px;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin: 8px 0;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+
+  h2 {
+    margin-bottom: 8px;
+  }
 }
 
 #results li:active {
@@ -20,3 +22,83 @@
   filter: grayscale(1);
   opacity: 0.5;
 }
+
+#results {
+  padding: 8px;
+}
+
+.day-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 16%;
+
+  .day-now {
+    font-size: 40px;
+    font-weight: bold;
+    opacity: .5;
+  }
+
+  .month-now {
+    font-weight: lighter;
+    opacity: .3;
+    font-size: 16px;
+  }
+}
+
+.event-calendar-informations {
+  margin-left: 32px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: .7;
+  }
+
+  .event-calendar-informations-inline {
+    display: flex;
+    font-size: 16px;
+    opacity: 0.7;
+    letter-spacing: 2px;
+
+    .event-calendar-address {
+      margin-left: 16px;
+    }
+  }
+}
+
+.cenlendar-content {
+  margin: 24px auto;
+  width: 75%;
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: .4;
+  }
+}
+
+// RESULT (ul) CHILD (li) TARGET FOR SPECIFY DESIGN 
+#results li:nth-child(1) {
+  border-radius: 10px 10px 0 0;
+}
+
+#results li:nth-last-child(1) {
+  border-radius: 0 0 10px 10px ;
+}
+
+// RESULT (ul) CHILD (li) TARGET FOR SPECIFY DESIGN BORDER LEFT COLOR
+#results li:nth-child(1n) {
+  border-left: 8px solid $mint-green;
+}
+
+#results li:nth-child(2n) {
+  border-left: 8px solid $blue-sky;
+}
+
+#results li:nth-child(3n) {
+  border-left: 8px solid $dark-blue;
+}
+
