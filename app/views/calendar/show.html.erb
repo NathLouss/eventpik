@@ -1,17 +1,38 @@
 
-<ul id="results">
-<% @events.sort_by(&:created_at).each do |event| %>
-    <li data-event-id="<%= event.id %>" ><%= event.activity.title %>
-        <%= event.activity.duration %></li>
-  <% end %>
-</ul>
+<!-- CALENDAR NOTIF -->
+<div class="container">
+  <div class="cenlendar-content">
+    <!-- <h1><%= (Time.now + 1.month).strftime("%B").upcase %> - <%= Time.now.year %></h1> -->
+    <h1><%= (current_user.wish_list.start_at + 1.month).strftime("%B").upcase %> - <%= Time.now.year %></h1>
+    <ul id="results">
+      <% @events.sort_by(&:created_at).each do |event| %>
+          <li data-event-id="<%= event.id %>">
+            <div class="day-information">
+              <div class="day-now">
+                <%#= Time.now.day %>
+                <%= current_user.wish_list.start_at.day %>
+              </div>
+              <div class="month-now">
+                <%#= (Time.now + 1.month).strftime("%B")[0..2].upcase %>
+                <%= (current_user.wish_list.start_at + 1.month).strftime("%B")[0..2].upcase %>
+              </div>
+            </div>
 
-<%= week_calendar events: @events do |date, events| %>
-  <%= date %>
+            <div class="event-calendar-informations">
+              <h2><%= event.activity.title.upcase %></h2>
 
-  <% events.each do |event| %>
-    <div>
-      <%= event.activity.title %>
-    </div>
-  <% end %>
-<% end %>
+              <div class="event-calendar-informations-inline">
+                <div class="event-calendar-duration">
+                  <p><i class="fas fa-stopwatch"></i> <%= event.activity.duration/60 %> heure(s)</p>
+                </div>
+                <div class="event-calendar-address">
+                  <p><i class="fas fa-map-marker-alt"></i> <%= event.activity.address %></p>
+                </div>
+              </div>
+            </div>
+
+          </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
