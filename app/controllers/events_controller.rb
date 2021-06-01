@@ -17,7 +17,11 @@ class EventsController < ApplicationController
     @event_new_position = Event.find(params[:newPosition])
     raise
     @event.update(params[:newPosition])
- 
+    # new position / old position / id
+    # récupérer id d'un event
+    # remplacer/updater old position avec le new position
+    # indirectement position autres event doit être updater
+    
     
   end
 
