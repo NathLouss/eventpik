@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     raise
     @event.update(params[:newPosition])
  
+    
   end
 
   def destroy
