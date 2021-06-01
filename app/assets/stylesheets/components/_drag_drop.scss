@@ -8,6 +8,7 @@
   align-items: center;
   width: 100%;
   height: 120px;
+  border-radius: 10px;
 
   h2 {
     margin-bottom: 8px;
@@ -24,14 +25,18 @@
 }
 
 #results {
-  padding: 8px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 4px;
 }
 
 .day-information {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 16%;
+  margin: 0 32px;
 
   .day-now {
     font-size: 40px;
@@ -47,10 +52,9 @@
 }
 
 .event-calendar-informations {
-  margin-left: 32px;
 
   h2 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
     opacity: .7;
@@ -60,33 +64,52 @@
     display: flex;
     font-size: 16px;
     opacity: 0.7;
-    letter-spacing: 2px;
+
+    .event-calendar-address, .event-calendar-duration {
+      display: flex;
+      align-items: center;
+    }
 
     .event-calendar-address {
-      margin-left: 16px;
+      margin-left: 8px;
     }
+
+    p {
+      margin: 0;
+      margin-left: 8px;
+    }
+
   }
 }
 
-.cenlendar-content {
-  margin: 24px auto;
-  width: 75%;
+.cenlendar-content h1{
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  opacity: .4;
+  text-align: center;
+  background: $ice-gray;
+  padding: 16px 0;
+  margin-top: 4px;
+  border-radius: 10px;
+  border: 1px dotted lightgrey;
+}
 
-  h1 {
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    opacity: .4;
+.days-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+
+  h2 {
+    font-weight: lighter;
+    opacity: .7;
+    letter-spacing: 4px;
+    text-align: center;
+    background: lavender;
+    padding: 16px 0;
+    margin-top: 4px;
+    border-radius: 10px;
   }
-}
-
-// RESULT (ul) CHILD (li) TARGET FOR SPECIFY DESIGN 
-#results li:nth-child(1) {
-  border-radius: 10px 10px 0 0;
-}
-
-#results li:nth-last-child(1) {
-  border-radius: 0 0 10px 10px ;
 }
 
 // RESULT (ul) CHILD (li) TARGET FOR SPECIFY DESIGN BORDER LEFT COLOR
@@ -98,7 +121,12 @@
   border-left: 8px solid $blue-sky;
 }
 
-#results li:nth-child(3n) {
-  border-left: 8px solid $dark-blue;
+.days-columns h2:nth-child(1) {
+  background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(150,216,202,1) 100%);
 }
 
+.days-columns h2:nth-child(2) {
+  background: rgb(255,255,255);
+	background: linear-gradient(90deg, rgba(255,255,255,1) 30%, rgba(134,178,243,1) 100%);
+}
