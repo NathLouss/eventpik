@@ -3,7 +3,13 @@
 <div class="container">
   <div class="cenlendar-content">
     <!-- <h1><%= (Time.now + 1.month).strftime("%B").upcase %> - <%= Time.now.year %></h1> -->
-    <h1><%= (current_user.wish_list.start_at + 1.month).strftime("%B").upcase %> - <%= Time.now.year %></h1>
+    <h1><%= (current_user.wish_list.start_at + 0.month).strftime("%B").upcase %> - <%= Time.now.year %></h1>
+    
+    <div class="days-columns">
+      <h2><%= (current_user.wish_list.start_at + 0.day).strftime("%A").upcase %></h2>
+      <h2><%= (current_user.wish_list.end_at + 0.day).strftime("%A").upcase %></h2>
+    </div>
+
     <ul id="results">
       <% @events.sort_by(&:created_at).each do |event| %>
           <li data-event-id="<%= event.id %>">
@@ -14,7 +20,7 @@
               </div>
               <div class="month-now">
                 <%#= (Time.now + 1.month).strftime("%B")[0..2].upcase %>
-                <%= (current_user.wish_list.start_at + 1.month).strftime("%B")[0..2].upcase %>
+                <%= (current_user.wish_list.start_at + 0.month).strftime("%B")[0..2].upcase %>
               </div>
             </div>
 
@@ -23,16 +29,18 @@
 
               <div class="event-calendar-informations-inline">
                 <div class="event-calendar-duration">
-                  <p><i class="fas fa-stopwatch"></i> <%= event.activity.duration/60 %> heure(s)</p>
+                  <i class="fas fa-stopwatch"></i>
+                  <p><%= event.activity.duration/60 %>h</p>
                 </div>
                 <div class="event-calendar-address">
-                  <p><i class="fas fa-map-marker-alt"></i> <%= event.activity.address %></p>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <p><%= event.activity.address %></p>
                 </div>
               </div>
             </div>
-
           </li>
         <% end %>
     </ul>
+    
   </div>
 </div>

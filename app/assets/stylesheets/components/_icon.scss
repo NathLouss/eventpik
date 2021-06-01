@@ -3,12 +3,14 @@
   .far {
     color: #023047;
     position: absolute;
-    font-size: 3em;
+    font-size: 32px;
     left: 18px;
     top: 24px;
+
     &:hover {
     color: white;
     }
+    
   }
 
   .fas {
