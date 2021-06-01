@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_075216) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.date "start_time"
+    t.datetime "start_time"
     t.bigint "wish_list_id", null: false
     t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 2021_05_31_075216) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "start_at"
-    t.date "end_at"
+    t.datetime "start_at"
+    t.datetime "end_at"
     t.string "address"
     t.integer "radius"
     t.index ["user_id"], name: "index_wish_lists_on_user_id"
