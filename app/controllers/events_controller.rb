@@ -13,12 +13,20 @@ class EventsController < ApplicationController
 
   def update
     render json: { success: true }
+    @event = Event.find(params[:id])
+    @event_new_position = Event.find(params[:newPosition])
+    raise
+    @event.update(params[:newPosition])
+ 
   end
-
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to request.referrer
   end
+
+  private
+
+
 end
