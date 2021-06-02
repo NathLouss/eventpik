@@ -1,5 +1,5 @@
 <!-- CALENDAR NOTIF -->
-<div class="container">
+<!-- <div class="container">
   <div class="cenlendar-content">
 
     <% if current_user.wish_list.events.empty? %>
@@ -76,5 +76,94 @@
 
     <% end %>
 
+  </div>
+</div> -->
+
+
+
+
+<div class="container">
+  <div class="cenlendar-content">
+
+    <% if current_user.wish_list.events.empty? %>
+      <h1 class="calendar-empty-message">Votre wishlist est vide, veuillez d'abord ajouter des activités avant de générer votre calendrier</h1>
+        
+    <% else %>
+      <h1><%= t("date.month_names")[(current_user.wish_list.start_at + 0.month).month].upcase %> - <%= Time.now.year %></h1>
+
+      <div class="days-columns">
+
+        <div class="day-one">
+          <h2><%= t("date.day_names")[(current_user.wish_list.start_at + 0.day).wday].upcase %></h2>
+          <% @events.sort_by(&:start_time).group_by{|event| event.start_time.day }.each do |day, events| %>
+            <ul id="results">
+              <% events.each do |event| %>
+                <% if event.start_time.day == 12 %>
+                  <li data-event-id="<%= event.id %>">
+                    <div class="day-information">
+                      <div class="day-now">
+                        <%= event.start_time.day %>
+                      </div>
+                      <div class="month-now">
+                        <%= t("date.abbr_month_names")[(event.start_time + 0.month).month].upcase %>
+                      </div>
+                    </div>
+                    <div class="event-calendar-informations">
+                      <h2><%= event.activity.title.upcase %></h2>
+                      <div class="event-calendar-informations">
+                        <div class="event-calendar-duration">
+                          <i class="fas fa-stopwatch"></i>
+                          <p><%= event.start_time.strftime('%H:%M') %> à <%= event.start_time.hour + event.activity.duration/60 %>:<%= event.start_time.strftime('%M') %></p>
+                        </div>
+                        <div class="event-calendar-address">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <p><%= event.activity.address %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+
+        <div class="day-two">
+          <h2><%= t("date.day_names")[(current_user.wish_list.start_at + 1.day).wday].upcase %></h2>
+          <% @events.sort_by(&:start_time).group_by{|event| event.start_time.day }.each do |day, events| %>
+            <ul id="results">
+              <% events.each do |event| %>
+                <% if event.start_time.day == 13 %>
+                  <li data-event-id="<%= event.id %>">
+                    <div class="day-information">
+                      <div class="day-now">
+                        <%= event.start_time.day %>
+                      </div>
+                      <div class="month-now">
+                        <%= t("date.abbr_month_names")[(event.start_time + 0.month).month].upcase %>
+                      </div>
+                    </div>
+                    <div class="event-calendar-informations">
+                      <h2><%= event.activity.title.upcase %></h2>
+                      <div class="event-calendar-informations">
+                        <div class="event-calendar-duration">
+                          <i class="fas fa-stopwatch"></i>
+                          <p><%= event.start_time.strftime('%H:%M') %> à <%= event.start_time.hour + event.activity.duration/60 %>:<%= event.start_time.strftime('%M') %></p>
+                        </div>
+                        <div class="event-calendar-address">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <p><%= event.activity.address %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
   </div>
 </div>
