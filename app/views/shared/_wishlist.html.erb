@@ -23,7 +23,7 @@
           <div class="event-notification-info">
             <h2><%= event.activity.title %></h2>
             <h3><%= current_user.wish_list.address %></h3>
-            <p>Du <%= current_user.wish_list.start_at.strftime('%D') %> au <%= current_user.wish_list.end_at.strftime('%D') %></p>
+            <!-- <p>Du <%= current_user.wish_list.start_at.strftime('%D') %> au <%= current_user.wish_list.end_at.strftime('%D') %></p> -->
           </div>
           <%= link_to event_path(event), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer #{event.activity.title.upcase} de votre wishlist ?" } do %>
             <i class="far fa-trash-alt"></i></a>
