@@ -1,0 +1,8 @@
+.my-class {
+  position: absolute;
+  transform: scale(0);
+}
+
+.my-class + label {
+  cursor: pointer;
+}

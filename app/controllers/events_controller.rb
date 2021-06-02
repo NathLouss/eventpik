@@ -14,18 +14,12 @@ class EventsController < ApplicationController
   def update
     render json: { success: true }
     @event = Event.find(params[:id])
-    @event_new_position = Event.find(params[:newPosition])
-    @event.update(params[:newPosition])
-    # new position / old position / id
-    # récupérer id d'un event
-    # remplacer/updater old position avec le new position
-    # indirectement position autres event doit être updater
-  end
-
-  def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-    redirect_to request.referrer
+    @wish_list = @event.wish_list
+    @events = @wish_list.events.order(:start_time).to_a
+    @events.delete_at(params[:oldPosition].to_i)
+    @events.insert(params[:newPosition].to_i, @event)
+    Event.assign_start_time(@events)
+    #redirect_to request.referrer
   end
 
 end

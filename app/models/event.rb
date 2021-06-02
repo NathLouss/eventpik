@@ -3,8 +3,8 @@ class Event < ApplicationRecord
   belongs_to :activity
 
   # validates :start_time, presence: true
-  def self.assign_start_time
-    events = self.all
+  def self.assign_start_time(events)
+    #events = self.all.to_a.sort_by(&:position)
     events.each_with_index do |event, index|
       # si c'est le 1er event on lui attribut le debut de la wish list (start_at)
       if index == 0
