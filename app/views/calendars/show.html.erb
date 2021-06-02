@@ -6,50 +6,75 @@
       <h1 class="calendar-empty-message">Votre wishlist est vide, veuillez d'abord ajouter des activités avant de générer votre calendrier</h1>
     <% else %>
       <h1><%= t("date.month_names")[(current_user.wish_list.start_at + 0.month).month].upcase %> - <%= Time.now.year %></h1>
-
+      
       <div class="days-columns">
-        <h2><%= t("date.day_names")[(current_user.wish_list.start_at + 0.day).wday].upcase %></h2>
-        <h2><%= t("date.day_names")[(current_user.wish_list.end_at + 0.day).wday].upcase %></h2>
+
+        <div class="day-one">
+          <h2><%= t("date.day_names")[(current_user.wish_list.start_at + 0.day).wday].upcase %></h2>
+
+          <ul id="results">
+            <% @events.sort_by(&:start_time).each do |event| %>
+              <li data-event-id="<%= event.id %>">
+                <div class="day-information">
+                  <div class="day-now">
+                    <%= event.start_time.day %>
+                  </div>
+                  <div class="month-now">
+                    <%= t("date.abbr_month_names")[(event.start_time + 0.month).month].upcase %>
+                  </div>
+                </div>
+                <div class="event-calendar-informations">
+                  <h2><%= event.activity.title.upcase %></h2>
+                  <div class="event-calendar-informations">
+                    <div class="event-calendar-duration">
+                      <i class="fas fa-stopwatch"></i>
+                      <p><%= event.start_time.strftime('%H:%M') %> à <%= event.start_time.hour + event.activity.duration/60 %>:<%= event.start_time.strftime('%M') %></p>
+                    </div>
+                    <div class="event-calendar-address">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p><%= event.activity.address %></p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="day-two">
+          <h2><%= t("date.day_names")[(current_user.wish_list.end_at + 0.day).wday].upcase %></h2>
+
+          <ul id="results">
+            <% @events.sort_by(&:start_time).each do |event| %>
+              <li data-event-id="<%= event.id %>">
+                <div class="day-information">
+                  <div class="day-now">
+                    <%= event.start_time.day %>
+                  </div>
+                  <div class="month-now">
+                    <%= t("date.abbr_month_names")[(event.start_time + 0.month).month].upcase %>
+                  </div>
+                </div>
+                <div class="event-calendar-informations">
+                  <h2><%= event.activity.title.upcase %></h2>
+                  <div class="event-calendar-informations">
+                    <div class="event-calendar-duration">
+                      <i class="fas fa-stopwatch"></i>
+                      <p><%= event.start_time.strftime('%H:%M') %> à <%= event.start_time.hour + event.activity.duration/60 %>:<%= event.start_time.strftime('%M') %></p>
+                    </div>
+                    <div class="event-calendar-address">
+                      <i class="fas fa-map-marker-alt"></i>
+                      <p><%= event.activity.address %></p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
+
     <% end %>
-
-    <ul id="results">
-      <% @events.sort_by(&:start_time).each do |event| %>
-          <li data-event-id="<%= event.id %>">
-
-            <div class="day-information">
-
-              <div class="day-now">
-                <%= event.start_time.day %>
-              </div>
-
-              <div class="month-now">
-                <%= t("date.abbr_month_names")[(event.start_time + 0.month).month].upcase %>
-              </div>
-
-            </div>
-
-            <div class="event-calendar-informations">
-              <h2><%= event.activity.title.upcase %></h2>
-
-              <div class="event-calendar-informations">
-
-                <div class="event-calendar-duration">
-                  <i class="fas fa-stopwatch"></i>
-                  <p><%= event.start_time.strftime('%H:%M') %> à <%= event.start_time.hour + event.activity.duration/60 %>:<%= event.start_time.strftime('%M') %></p>
-                </div>
-
-                <div class="event-calendar-address">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <p><%= event.activity.address %></p>
-                </div>
-
-              </div>
-
-            </div>
-          </li>
-        <% end %>
-    </ul>
 
   </div>
 </div>
