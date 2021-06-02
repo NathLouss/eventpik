@@ -9,9 +9,9 @@
 
 // activities#index BANNER
 
-.activities-index-banner {
+.banner-gradiant {
   background: linear-gradient(-25deg, #96D8CA, #86B2F3);
-  height: 300px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,5 +23,12 @@
   #btn-gradiant {
     border: 2px solid rgba(255, 255,255, .7);
     background: none;
+  }
+
+  h1 {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    opacity: .9;
   }
 }
