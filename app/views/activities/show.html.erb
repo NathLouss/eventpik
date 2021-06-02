@@ -10,7 +10,7 @@
         <div class="card-title">
           <h2><%= @activity.title %></h2>
         </div>
-        
+
         <p style="text-align: justify"><%= @activity.description %></p>
         <p>avis: <% @activity.rating.times do %>
            <i class="fas fa-star star-yellow"></i>
@@ -20,7 +20,7 @@
         <p>où: <%= @activity.address %> <i class="fas fa-map-signs" style="color: #023047"></i></p>
         <p>tarif: <%= @activity.price %>€ <i class="fas fa-hand-holding-usd" style="color: #023047"></i> </p>
         <p>Durée: <%= @activity.duration/60 %> heures <i class="fas fa-stopwatch" style="color: #023047"></i></p>
-        <p>Visiter le site: <%= link_to @activity.website_url, @activity.website_url, target: "_blank"  %>  </p>
+        <p><%= link_to 'visiter le site', @activity.website_url, target: "_blank" %> <i class="fas fa-external-link-alt" style="color: #023047"></i></p>
 
         <div class="card-button">
             <%= simple_form_for [@activity, @event], method: :post do |f| %>
