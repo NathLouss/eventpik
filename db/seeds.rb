@@ -57,7 +57,7 @@ activity1 = Activity.new(
   activity3.save!
 
   activity4 = Activity.new(
-  title: "Visite Gastronomique de Bordeaux",
+  title: "Visite Gastronomique",
   category: "gastronomie",
   address: "Place de la Bourse, 33000 Bordeaux",
   description: "Après une échappée dans le parc, entrez dans le cuvier bois dédié à la vinification du vin rouge, assorti de ses piges en inox et faites-vous conter ses secrets de fabrication.
@@ -86,7 +86,7 @@ activity5 = Activity.new(
   activity5.save!
 
   activity6 = Activity.new(
-  title: "Balade aérienne au dessous de la région Bordelaise",
+  title: "Balade aérienne",
   category: "sport",
   address: "305 Avenue de Mont de Marsan, 33850 Léognan",
   description: "Rejoignez un pilote sur un vol unique et partagez le coût avec lui.Une excellente façon de découvrir les magnifiques paysages de la région à bord d'un avion privé.
@@ -100,7 +100,7 @@ activity5 = Activity.new(
   activity6.save!
 
   activity7 = Activity.new(
-  title: "Bump-Games Bordeaux",
+  title: "Bump-Games",
   category: "sport",
   address: "16 avenue Louis de Broglie, 33600 Pessac",
   description: "Découvrez les activités Bump Games à Bordeaux !
