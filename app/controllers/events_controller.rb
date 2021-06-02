@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   def update
     render json: { success: true }
+    raise
     @event = Event.find(params[:id])
     @event_new_position = Event.find(params[:newPosition])
     raise
@@ -21,8 +22,8 @@ class EventsController < ApplicationController
     # récupérer id d'un event
     # remplacer/updater old position avec le new position
     # indirectement position autres event doit être updater
-    
-    
+
+
   end
 
   def destroy

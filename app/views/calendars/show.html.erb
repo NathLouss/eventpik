@@ -12,18 +12,19 @@
     <% end %>
 
     <ul id="results">
-      <% @events.sort_by(&:created_at).each do |event| %>
+      <% @events.sort_by(&:start_time).each do |event| %>
           <li data-event-id="<%= event.id %>">
             <div class="day-information">
-              <div class="day-now"> 
-                <%= current_user.wish_list.start_at.day %>
+              <div class="day-now">
+                <%= event.start_time.day %>
               </div>
               <div class="month-now">
-                <%= t("date.abbr_month_names")[(current_user.wish_list.start_at + 0.month).month].upcase %>
+                <%= t("date.abbr_month_names")[(event.start_time + 0.month).month].upcase %>
               </div>
             </div>
 
             <div class="event-calendar-informations">
+              <%= event.start_time %>
               <h2><%= event.activity.title.upcase %></h2>
 
               <div class="event-calendar-informations-inline">
@@ -40,6 +41,6 @@
           </li>
         <% end %>
     </ul>
-    
+
   </div>
 </div>
