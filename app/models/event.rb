@@ -6,9 +6,9 @@ class Event < ApplicationRecord
   def self.assign_start_time
     events = self.all
     events.each_with_index do |event, index|
-    # si c'est le 1er event on lui attribut le debut de la wish list (start_at)
+      # si c'est le 1er event on lui attribut le debut de la wish list (start_at)
       if index == 0
-        event.start_time =event.wish_list.start_at + 10.hour
+        event.start_time = event.wish_list.start_at + 10.hours
       else
         # si (heure démarrage event previous + (durée activity + 30 mn).formatminutes).récup heure est sup à 18h
         previous = events[index - 1]
@@ -26,9 +26,8 @@ class Event < ApplicationRecord
       end
       event.save
     end
-
-
   end
+
   def next_hour
    return self.next_slot.hour + self.next_slot.min * 1.0/60
   end
