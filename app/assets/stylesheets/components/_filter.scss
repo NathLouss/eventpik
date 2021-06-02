@@ -1,8 +1,5 @@
-.my-class {
-  position: absolute;
-  transform: scale(0);
-}
-
-.my-class + label {
-  cursor: pointer;
+.filter {
+  display: flex;
+  justify-content: space-around;
+  margin: 35px 0px 45px 0px;
 }
