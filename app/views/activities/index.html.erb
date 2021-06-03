@@ -1,7 +1,7 @@
 <div class="banner-gradiant">
   <div class="container">
     <div class="home-form-content">
-      <%= simple_form_for(@wishlist, method: :patch, url: wish_list_path(@wishlist)) do |f| %> 
+      <%= simple_form_for(@wishlist, method: :patch, url: wish_list_path(@wishlist)) do |f| %>
         <div class="form-input">
           <div class="form-input-location">
             <%= f.input :address, placeholder: 'Entrez une adresse ici', label: false, id: 'address' %>
@@ -19,7 +19,7 @@
       <% end %>
     </div>
   </div>
-  
+
   <%# <div>
     <input class= "my-class" type="checkbox" id="gastronomie">
     <label for="gastronomie">Gastronomie</label>
@@ -42,7 +42,7 @@
             <p><%= activity.address %></p>
 
             <div class="card-activity-infos-bottom">
-              <p class="card-activity-infos-bottom-rating"> 
+              <p class="card-activity-infos-bottom-rating">
                 <% activity.rating.times do %>
                   <i class="fas fa-star"></i>
                 <% end %>
