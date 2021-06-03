@@ -3,6 +3,8 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 24px;
   flex-grow: 1;
+  overflow: auto;
+  width: 130%;
 }
 
 .card-activity {
