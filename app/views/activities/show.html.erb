@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="activity-content">
     <div class="activity-card">
       <h2><%= @activity.title %></h2>
@@ -34,6 +34,35 @@
         <%= f.submit "Ajouter", data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
       <% end %>
 
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="activity-card">
+    <%= cl_image_tag @activity.photo.key %>
+
+    <div class="right-arrow-btn">
+      <%= link_to activities_path do %>
+        <i class="far fa-arrow-alt-circle-left"></i>
+      <% end %>
+    </div>
+
+    <div class="activity-informations">
+      <h2><%= @activity.title %></h2>
+      <p><%= @activity.description %></p>
+
+      <p class="activity-stars"><% @activity.rating.times do %>
+        <i class="fas fa-star star-yellow"></i>
+      <% end %></p>
+
+      <p>Durée : <%= @activity.duration/60 %> heure(s)</p>
+      <p>Prix : <%= @activity.price %> €</p>
+      <p>Visiter le site : <%= link_to @activity.website_url, target: "_blank" %></i></p>
+
+      <%= simple_form_for [@activity, @event], method: :post do |f| %>
+        <%= f.submit "Ajouter à ma wishlist", data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
+      <% end %>
     </div>
   </div>
 </div>
