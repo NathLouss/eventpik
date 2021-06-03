@@ -22,7 +22,7 @@ const initSortable = () => {
       })
       .then(response => response.json())
       .then((data) => {
-        console.log(data.hits); // Look at local_names.default
+        document.location.reload();
       });
     }
   });
