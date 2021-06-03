@@ -190,8 +190,8 @@ activity13 = Activity.new(
   price: 89,
   rating: 4
   )
-activity13.photo.attach(io: URI.open('https://https://res.cloudinary.com/dfuxvscct/image/upload/v1622724438/jesus_a4rpg7.png'), filename: 'nes.png', content_type: 'image/png')
-activity13.save!
+activity12.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622724438/jesus_a4rpg7.png'), filename: 'nes.png', content_type: 'image/png')
+activity12.save!
   
   puts "Finished !"
 
