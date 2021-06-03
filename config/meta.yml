@@ -1,5 +1,5 @@
 meta_product_name: "Eventpik"
 meta_title: "Eventpik | Planifier vos activités"
 meta_description: "Grâce à Eventpik trouvez les meilleures activités près de chez vous en quelques cliques et ajoutez les à votre calendrier personnel."
-meta_image: "logoEventPik.png" # should exist in `app/assets/images/`
+meta_image: "EventpikImage.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
