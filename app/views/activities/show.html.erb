@@ -56,9 +56,11 @@
         <i class="fas fa-star star-yellow"></i>
       <% end %></p>
 
-      <p>Durée : <%= @activity.duration/60 %> heure(s)</p>
-      <p>Prix : <%= @activity.price %> €</p>
-      <p>Visiter le site : <%= link_to @activity.website_url, @activity.website_url, target: "_blank" %></p>
+      <p><i class="fas fa-map-signs" id="icons"></i> Address : <%= @activity.address %></p>
+
+      <p><i class="fas fa-stopwatch" id="icons"></i> Durée : <%= @activity.duration/60 %> heure(s)</p>
+      <p><i class="fas fa-hand-holding-usd" id="icons"></i> Prix : <%= @activity.price %> €</p>
+      <p><i class="fas fa-paper-plane" id="icons-site"></i> <%= link_to 'Visiter le site', @activity.website_url, target: "_blank" %></p>
 
       <%= simple_form_for [@activity, @event], method: :post do |f| %>
         <%= f.submit "Ajouter à ma wishlist", data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
