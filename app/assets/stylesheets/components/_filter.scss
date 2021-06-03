@@ -1,8 +1,10 @@
-.my-class {
-  position: absolute;
-  transform: scale(0);
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+
+  #btn-gradiant {
+    padding: 8px 16px;
+  }
 }
 
-.my-class + label {
-  cursor: pointer;
-}

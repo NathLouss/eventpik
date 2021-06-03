@@ -25,10 +25,10 @@ activity1 = Activity.new(
   price: 100,
   rating: 5
   )
-  activity1.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024193/marathon-bordeaux_uasywg.png'), filename: 'nes.png', content_type: 'image/png')
-  activity1.save!
+activity1.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024193/marathon-bordeaux_uasywg.png'), filename: 'nes.png', content_type: 'image/png')
+activity1.save!
 
-  activity2 = Activity.new(
+activity2 = Activity.new(
   title: "Musée d'Aquitaine",
   category: "culture",
   address: "20 Cours Pasteur, 33000 Bordeaux",
@@ -38,10 +38,10 @@ activity1 = Activity.new(
   price: 5,
   rating: 4
   )
-  activity2.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024199/musee-aquitaine-bordeaux_iqnyvf.png'), filename: 'nes.png', content_type: 'image/png')
-  activity2.save!
+activity2.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024199/musee-aquitaine-bordeaux_iqnyvf.png'), filename: 'nes.png', content_type: 'image/png')
+activity2.save!
 
-  activity3 = Activity.new(
+activity3 = Activity.new(
   title: "Château Pape Clément",
   category: "gastronomie",
   address: "216 Avenue Dr Nancel Penard, 33600 Pessac",
@@ -53,10 +53,10 @@ activity1 = Activity.new(
   price: 20,
   rating: 4
   )
-  activity3.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024180/degustation-vin_gsnaoq.png'), filename: 'nes.png', content_type: 'image/png')
-  activity3.save!
+activity3.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622024180/degustation-vin_gsnaoq.png'), filename: 'nes.png', content_type: 'image/png')
+activity3.save!
 
-  activity4 = Activity.new(
+activity4 = Activity.new(
   title: "Visite Gastronomique",
   category: "gastronomie",
   address: "Place de la Bourse, 33000 Bordeaux",
@@ -68,8 +68,8 @@ activity1 = Activity.new(
   price: 80,
   rating: 4
   )
-  activity4.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636078/degustation-bordeaux_itrwji.png'), filename: 'nes.png', content_type: 'image/png')
-  activity4.save!
+activity4.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636078/degustation-bordeaux_itrwji.png'), filename: 'nes.png', content_type: 'image/png')
+activity4.save!
 
 activity5 = Activity.new(
   title: "Sentinelles du climat",
@@ -82,10 +82,10 @@ activity5 = Activity.new(
   price: 7,
   rating: 4
   )
-  activity5.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636074/climat_j9ngp2.png'), filename: 'nes.png', content_type: 'image/png')
-  activity5.save!
+activity5.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636074/climat_j9ngp2.png'), filename: 'nes.png', content_type: 'image/png')
+activity5.save!
 
-  activity6 = Activity.new(
+activity6 = Activity.new(
   title: "Balade aérienne",
   category: "sport",
   address: "305 Avenue de Mont de Marsan, 33850 Léognan",
@@ -96,25 +96,25 @@ activity5 = Activity.new(
   price: 135,
   rating: 5
   )
-  activity6.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636316/balade-aerienne_trbqa2.png'), filename: 'nes.png', content_type: 'image/png')
-  activity6.save!
+activity6.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636316/balade-aerienne_trbqa2.png'), filename: 'nes.png', content_type: 'image/png')
+activity6.save!
 
-  activity7 = Activity.new(
+activity7 = Activity.new(
   title: "Bump-Games",
   category: "sport",
   address: "16 avenue Louis de Broglie, 33600 Pessac",
   description: "Découvrez les activités Bump Games à Bordeaux !
-Avec Bubble Bump, Archery Bump et Laser Bump il y en a pour toutes les envies, pour les petits comme pour les grands.
-Éclatez-vous avec les Bump-Games dans la Belle Endormie et partout en Gironde.",
+  Avec Bubble Bump, Archery Bump et Laser Bump il y en a pour toutes les envies, pour les petits comme pour les grands.
+  Éclatez-vous avec les Bump-Games dans la Belle Endormie et partout en Gironde.",
   website_url: "https://www.bump-games.com/decouvrir-bump-games-a-bordeaux.php/",
   duration: 90,
   price: 20,
   rating: 4
   )
-  activity7.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636370/bump-bordeaux_dnzlhm.png'), filename: 'nes.png', content_type: 'image/png')
-  activity7.save!
+activity7.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636370/bump-bordeaux_dnzlhm.png'), filename: 'nes.png', content_type: 'image/png')
+activity7.save!
 
-  activity8 = Activity.new(
+activity8 = Activity.new(
   title: "John Doe escape game",
   category: "sport",
   address: "7 Rue d'Alembert, 33000 Bordeaux",
@@ -125,9 +125,74 @@ Avec Bubble Bump, Archery Bump et Laser Bump il y en a pour toutes les envies, p
   price: 36,
   rating: 4
   )
-  activity8.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636077/escape-game_hgyzef.png'), filename: 'nes.png', content_type: 'image/png')
-  activity8.save!
+activity8.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622636077/escape-game_hgyzef.png'), filename: 'nes.png', content_type: 'image/png')
+activity8.save!
 
+activity9 = Activity.new(
+  title: "Lancer de haches",
+  category: "sport",
+  address: "152 avenue Jean Jaurès, 33600 Pessac",
+  description: "Venez lancer des haches chez Les Frères Jacks !! La nouvelle activité à la mode pour vous amuser entre amis ou en famille ! Un moment de détente à partager ...",
+  website_url: "https://lesfreresjacks.fr/",
+  duration: 60,
+  price: 48,
+  rating: 4
+  )
+activity9.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622717586/photo-halloween_wsg14b.png'), filename: 'nes.png', content_type: 'image/png')
+activity9.save!
+
+activity10 = Activity.new(
+  title: "Les bassins de lumières",
+  category: "culture",
+  address: "Impasse Brown de Colstoun, 33300 Bordeaux",
+  description: "Les Bassins de Lumières, à Bordeaux, est un centre d’art numérique situé dans l'enceinte de l'ancienne base sous-marine allemande de la seconde guerre mondiale.",
+  website_url: "https://www.bassins-lumieres.com/",
+  duration: 60,
+  price: 14,
+  rating: 4
+  )
+activity10.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622717698/exposition_vqgde9.png'), filename: 'nes.png', content_type: 'image/png')
+activity10.save!
+
+activity11 = Activity.new(
+  title: "Musée Mer Marine",
+  category: "culture",
+  address: "89 Rue des Étrangers, 33300 Bordeaux",
+  description: "Le Musée Mer Marine est un musée privé situé à Bordeaux. Ouvert en 2019, il présente une collection permanente sur le thème du monde maritime, ainsi que diverses expositions temporaires.",
+  website_url: "https://www.mmmbordeaux.com/",
+  duration: 60,
+  price: 48,
+  rating: 3
+  )
+activity11.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622718081/tableau-bateaux_lkzcdc.png'), filename: 'nes.png', content_type: 'image/png')
+activity11.save!
+
+activity12 = Activity.new(
+  title: "Vins et fromages",
+  category: "gastronomie",
+  address: "3 Cours du 30 Juillet, 33000 Bordeaux",
+  description: "Vous ne savez jamais avec quel vin sublimer votre fromage ? Cet atelier est fait pour vous ! Sec ou frais, à pâte molle ou pressée, chèvre ou vache, persillé ou non… explorez la palette des accords possibles en fonction de votre fromage. Dites « Cheese » !",
+  website_url: "https://www.ecoleduvindebordeaux.com/fr/",
+  duration: 180,
+  price: 49,
+  rating: 5
+  )
+activity12.photo.attach(io: URI.open('https://res.cloudinary.com/dfuxvscct/image/upload/v1622723984/plateau-fromages_yqtx70.png'), filename: 'nes.png', content_type: 'image/png')
+activity12.save!
+
+activity13 = Activity.new(
+  title: "Atelier cuisine Chef Jesus",
+  category: "gastronomie",
+  address: "107 Rue Pelleport, 33800 Bordeaux",
+  description: "Chef Jésus, spécialiste en cours, consulting et animation culinaire à Bordeaux propose des cours de cuisine au cœur de son domicile Bordelais pour 4 à 6 ...",
+  website_url: "https://www.chef-jesus.fr/",
+  duration: 180,
+  price: 89,
+  rating: 4
+  )
+activity13.photo.attach(io: URI.open('https://https://res.cloudinary.com/dfuxvscct/image/upload/v1622724438/jesus_a4rpg7.png'), filename: 'nes.png', content_type: 'image/png')
+activity13.save!
+  
   puts "Finished !"
 
   puts "create events"

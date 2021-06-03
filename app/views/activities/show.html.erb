@@ -1,32 +1,39 @@
-
 <div class="container">
-  <div class="card-product">
-     <%= link_to activities_path(@activity) do %>
-      <i class="far fa-arrow-alt-circle-left"></i>
-    <% end %>
-    <%= cl_image_tag @activity.photo.key, width: 400, height: 300 %>
-
-      <div class="product-bio">
-        <div class="card-title">
-          <h2><%= @activity.title %></h2>
-        </div>
-
-        <p style="text-align: justify"><%= @activity.description %></p>
-        <p>avis: <% @activity.rating.times do %>
-           <i class="fas fa-star star-yellow"></i>
+  <div class="activity-content">
+    <div class="activity-card">
+      <h2><%= @activity.title %></h2>
+      <div class="activity-infos">
+        <p class="activity-stars"><% @activity.rating.times do %>
+          <i class="fas fa-star star-yellow"></i>
         <% end %></p>
-        <p class="category">catégorie: <%= @activity.category %> </p>
-
-        <p>où: <%= @activity.address %> <i class="fas fa-map-signs" style="color: #023047"></i></p>
-        <p>tarif: <%= @activity.price %>€ <i class="fas fa-hand-holding-usd" style="color: #023047"></i> </p>
-        <p>Durée: <%= @activity.duration/60 %> heures <i class="fas fa-stopwatch" style="color: #023047"></i></p>
-        <p><%= link_to 'visiter le site', @activity.website_url, target: "_blank" %> <i class="fas fa-external-link-alt" style="color: #023047"></i></p>
-
-        <div class="card-button">
-            <%= simple_form_for [@activity, @event], method: :post do |f| %>
-            <%= f.submit 'Ajouter à ma Wish List', data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
-            <% end %>
-        </div>
+        <p><%= @activity.category %></p>
       </div>
+      <%= cl_image_tag @activity.photo.key, width: 400, height: 300 %>
+      <h2>A propos</h2>
+      <p><%= @activity.description %></p>
+      <%= link_to 'Retour à la liste', activities_path, id: "btn-gradiant" %>  
+    </div>
+
+    <div class="activity-infos-plus">
+      <div class="website-activity">
+        <h2>Infos pratiques</h2>
+        <p>Bénéficiez de toutes les informations dont vous avez besoin en visitant allant <%= link_to 'visiter notre site', @activity.website_url, target: "_blank" %></i></p>
+      </div>
+
+      <div class="activity-duration">
+        <h2>Durée</h2>
+        <p>La durée de cette activité est d'environ <%= @activity.duration/60 %> heures.</p>
+      </div>
+
+      <div class="activity-price">
+        <h2>Coût moyen</h2>
+        <p>Il faut compter un montant moyen de <%= @activity.price %> € pour cette activité.</p>
+      </div>
+
+      <%= simple_form_for [@activity, @event], method: :post do |f| %>
+        <%= f.submit "Ajouter", data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
+      <% end %>
+
+    </div>
   </div>
 </div>

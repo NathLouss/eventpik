@@ -16,14 +16,17 @@
         <div class="form-action">
           <%= f.submit "Lancer une nouvelle recherche", id: "btn-gradiant" %>
         </div>
+
+        <div class="filter">
+            <% Activity.all.map(&:category).uniq.each do |category| %>
+            <%= link_to category, activities_path(params: { category: category }), id: "btn-gradiant" %>
+            <% end %>
+            <%= link_to "Toutes", activities_path, id: "btn-gradiant" %>
+        </div>
       <% end %>
     </div>
   </div>
 
-  <%# <div>
-    <input class= "my-class" type="checkbox" id="gastronomie">
-    <label for="gastronomie">Gastronomie</label>
-  </div> %>
 </div>
 
 <div class="container">
