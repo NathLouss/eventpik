@@ -20,13 +20,13 @@
         <div class="filter">
             <% Activity.all.map(&:category).uniq.each do |category| %>
             <%= link_to category, activities_path(params: { category: category }), id: "btn-gradiant" %>
-          <% end %>
+            <% end %>
+            <%= link_to "Toutes", activities_path, id: "btn-gradiant" %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
 
 <div class="container">
   <div class="activities-container">
