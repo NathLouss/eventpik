@@ -58,7 +58,7 @@
 
       <p>Durée : <%= @activity.duration/60 %> heure(s)</p>
       <p>Prix : <%= @activity.price %> €</p>
-      <p>Visiter le site : <%= link_to @activity.website_url, target: "_blank" %></i></p>
+      <p>Visiter le site : <%= link_to @activity.website_url, @activity.website_url, target: "_blank" %></p>
 
       <%= simple_form_for [@activity, @event], method: :post do |f| %>
         <%= f.submit "Ajouter à ma wishlist", data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
