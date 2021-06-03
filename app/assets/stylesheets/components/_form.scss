@@ -10,7 +10,7 @@
   margin: 0 auto
 }
 
-.form-input{
+.form-input {
 
   .form-input-location {
     display: grid;
@@ -24,7 +24,7 @@
 
   .form-input-dates, .form-input-location {
     grid-gap: 16px;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
 
     input {
       border-radius: 25px;
