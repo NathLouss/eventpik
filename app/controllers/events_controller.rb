@@ -22,4 +22,10 @@ class EventsController < ApplicationController
     #redirect_to request.referrer
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to request.referrer
+  end
+
 end
