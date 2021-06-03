@@ -1,5 +1,5 @@
 // EVENT CALENDAR GENERAL DESIGN
-#results li {
+#results1 li, #results2 li {
   cursor: grab;
   background: white;
   list-style: none;
@@ -15,16 +15,16 @@
   }
 }
 
-#results li:active {
+#results1 li:active, #results2 li:active {
   cursor: grabbing;
 }
 
-#results li.ghost {
+#results1 li.ghost, #results2 li.ghost {
   filter: grayscale(1);
   opacity: 0.5;
 }
 
-#results {
+#results1, #results2 {
   padding: 0;
   margin-top: 4px; 
 }
@@ -100,11 +100,11 @@
 }
 
 // RESULT (ul) CHILD (li) TARGET FOR SPECIFY DESIGN BORDER LEFT COLOR
-#results li:nth-child(1n) {
+#results1 li:nth-child(1n), #results2 li:nth-child(1n) {
   border-left: 8px solid $mint-green;
 }
 
-#results li:nth-child(2n) {
+#results1 li:nth-child(2n), #results2 li:nth-child(2n){
   border-left: 8px solid $blue-sky;
 }
 

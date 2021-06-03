@@ -18,8 +18,8 @@
 
         <div class="day-one">
           <h2><%= t("date.day_names")[(current_user.wish_list.start_at + 0.day).wday].upcase %></h2>
-          <% @events.sort_by(&:start_time).group_by{|event| event.start_time.day }.each do |day, events| %>
-            <ul id="results">
+          <ul id="results1">
+            <% @events.sort_by(&:start_time).group_by{|event| event.start_time.day }.each do |day, events| %>
               <% events.each do |event| %>
                 <% if event.start_time.day == current_user.wish_list.start_at.day %>
                   <li data-event-id="<%= event.id %>">
@@ -47,16 +47,16 @@
                   </li>
                 <% end %>
               <% end %>
-            </ul>
-          <% end %>
+            <% end %>
+          </ul>
         </div>
 
         <div class="day-two">
           <h2><%= t("date.day_names")[(current_user.wish_list.start_at + 1.day).wday].upcase %></h2>
-          <% @events.sort_by(&:start_time).group_by{|event| event.start_time.day }.each do |day, events| %>
-            <ul id="results">
+          <ul id="results2">
+            <% @events.sort_by(&:start_time).group_by{|event| event.start_time.day }.each do |day, events| %>
               <% events.each do |event| %>
-                <% if event.start_time.day == current_user.wish_list.start_at.day + 1 %>
+                <% if event.start_time.day == current_user.wish_list.end_at.day %>
                   <li data-event-id="<%= event.id %>">
                     <div class="day-information">
                       <div class="day-now">
@@ -82,8 +82,8 @@
                   </li>
                 <% end %>
               <% end %>
-            </ul>
-          <% end %>
+            <% end %>
+          </ul>
         </div>
 
       </div>
