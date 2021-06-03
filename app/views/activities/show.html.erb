@@ -30,3 +30,36 @@
       </div>
   </div>
 </div>
+
+
+<!-- <div class="container">
+  <div class="activity-card">
+    <h2><%= @activity.title %></h2>
+    <div class="activity-info">
+      <p><% @activity.rating.times do %>
+        <i class="fas fa-star star-yellow"></i>
+      <% end %></p>
+      <p><%= @activity.category %></p>
+    </div>
+    <%= cl_image_tag @activity.photo.key, width: 400, height: 300 %>
+    <h2>A propos</h2>
+    <p><%= @activity.description %></p>
+    <%= link_to 'Laisser un commentaire', '#', id: "btn-gradiant" %>
+    <hr>
+  </div>
+
+  <div class="activity-info">
+    <h2>Infos pratiques</h2>
+    <p></p>
+
+    <h2>Horaires</h2>
+    <p></p>
+
+    <h2>Durée moyenne</h2>
+    <p><%= @activity.duration/60 %> heures</p>
+
+    <%= simple_form_for [@activity, @event], method: :post do |f| %>
+      <%= f.submit 'Ajouter à ma Wish List', data: { confirm: "Vous avez ajouté #{@activity.title} à votre Wish List"}, id: "btn-gradiant" %>
+    <% end %>
+  </div>
+</div> -->
